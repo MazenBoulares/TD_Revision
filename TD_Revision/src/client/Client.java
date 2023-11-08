@@ -67,5 +67,5 @@ public class Client implements Comparable{
             return 1;
         } else {
             return 0;
-        }
+        }}
 }

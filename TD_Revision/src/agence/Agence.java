@@ -68,9 +68,9 @@ public class Agence {
 
     }
 
-    public List<Voiture> selectVoitureSelonCritere(Critere c) {
-//à completer
-    }
+//    public List<Voiture> selectVoitureSelonCritere(Critere c) {
+////à completer
+//    }
 
     public Set<Client> ensembleClientsLoueurs() {
         Set<Client> sc= new HashSet<>();
@@ -110,9 +110,6 @@ public class Agence {
     public Map<Client, ListVoitures> triCodeCroissant() {
 
        TreeMap<Client,ListVoitures> tm= new TreeMap<>();
-
-
-
 
 
         Map<Client, ListVoitures> m2=new HashMap<>();
