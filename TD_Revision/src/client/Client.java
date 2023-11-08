@@ -1,15 +1,17 @@
 package client;
 
+import voiture.Voiture;
+
 import java.util.Objects;
 
-public class Client {
+public class Client implements Comparable{
 
     private int code;
     private String nom;
     private String prenom;
 
 
-    public Client(int code, String nom, String prenom) {
+    public Client(int code, String nom, String prenom)  {
         this.code = code;
         this.nom = nom;
         this.prenom = prenom;
@@ -56,4 +58,14 @@ public class Client {
     public int hashCode() {
         return Objects.hash(code, nom, prenom);
     }
+
+    @Override
+    public int compareTo(Object o) {
+        if (this.code < ((Client)o).getCode()) {
+            return -1;
+        } else if (this.code > ((Client)o).getCode()) {
+            return 1;
+        } else {
+            return 0;
+        }
 }

@@ -15,6 +15,7 @@ import client.Client;
 
 import java.util.*;
 
+
 public class Agence {
     private String nom;
     private ListVoitures vs;
@@ -80,24 +81,47 @@ public class Agence {
         return sc;
     }
 
-    public Collection<ListVoitures> collectionVoituresLouees() {
-        Set<Voiture> sv= new HashSet<>();
-
-        for(ListVoitures lv: ClientVoitureLoue.values())
-        {
-            sv.add(lv.getVoitures().iterateur());
-        }
-
-        return sv;
-    }
+//    public Collection<ListVoitures> collectionVoituresLouees() {
+//        Collection<ListVoitures> sv= new Collection<>() {
+//        };
+//
+//        for(ListVoitures lv: ClientVoitureLoue.values())
+//        {
+//
+//               sv.add(lv.getVoitures());
+//
+//        }
+//
+//        return sv;
+//    }
 
     public void afficheLesClientsEtLeursListesVoitures() {
+        for(Map.Entry<Client,ListVoitures> entry: ClientVoitureLoue.entrySet()){
+            Client e=entry.getKey();
+            ListVoitures d=entry.getValue();
+            System.out.println(e.toString());
+            d.affiche();
+        }
+
+
 
     }
 
     public Map<Client, ListVoitures> triCodeCroissant() {
 
-        // à completer
+       TreeMap<Client,ListVoitures> tm= new TreeMap<>();
+
+
+
+
+
+        Map<Client, ListVoitures> m2=new HashMap<>();
+        m2.putAll(tm);
+
+        return m2;
+
+
+
     }
 
     public Map<Client, ListVoitures> triNomCroissant() {
